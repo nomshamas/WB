@@ -1,12 +1,8 @@
 # README — Hacker News Scraper
 
-* poora Python code show karta hai (copy-paste ke liye ready),
-* ek Bash section deta hai jisse required packages install kar sakte ho aur script run kar sakte ho (copy button se paste kar lo),
-* aur phir har step ki **step-by-step Roman Urdu** explanation headings ke sath deta hai taake koi bhi aasani se samajh lo.
-
 ---
 
-## 🧾 Full Code (Copy-paste karne ke liye)
+## 🧾 Full Code
 
 ```python
 # File: hacker_news_scraper.py
@@ -52,25 +48,7 @@ print(f"Saved {len(df)} articles to {output_file}")
 
 ---
 
-## 🖥️ Bash (packages install + run) — copy kar ke terminal mein paste karo
-
-```bash
-# 1) virtualenv (optional but recommended)
-python -m venv venv && source venv/bin/activate  # macOS / Linux
-# on Windows (PowerShell): .\venv\Scripts\Activate.ps1
-
-# 2) required packages install karo
-pip install requests beautifulsoup4 pandas lxml
-
-# 3) script run karo
-python hacker_news_scraper.py
-```
-
-> Tip: agar Windows CMD use kar rahe ho to `source venv/bin/activate` ki jagah `.\venv\Scripts\activate` ya PowerShell mein `.\venv\Scripts\Activate.ps1` use karo.
-
----
-
-# 🧠 Step-by-step Explanation (Roman Urdu)
+# 🧠 Step-by-step Explanation
 
 Yahan neechay har step ka **simple** aur **clear** Roman Urdu mein matlab aur purpose diya gaya hai. Headings follow kar ke agar koi sirf kisi ek hisse ko dekhna chahta ho to woh seedha jump kar sakta hai.
 
@@ -190,8 +168,7 @@ print(f"Saved {len(df)} articles to {output_file}")
 
 ## ✅ Summary
 
-Yeh README tumhe ek **ready-to-run** Python script deta hai jo Hacker News se titles aur links scrap karke `hacker_news_articles.csv` bana dega. Uper diye gaye Bash commands se dependency install karke seedha script run kar lo.
-
+Yeh README tumhe ek **ready-to-run** Python script deta hai jo Hacker News se titles aur links scrap karke `hacker_news_articles.csv` bana dega.
 ---
 
 **Author:** Nouman Sami
