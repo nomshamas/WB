@@ -1,0 +1,507 @@
+# Assignment 2 — Questions and Step-by-Step Answers
+
+> This file contains the questions you asked earlier and the answers I provided, each followed by a short, step-by-step explanation and the correct option marked.
+
+---
+
+## 1) Select the correct output of the following code
+
+```py
+import numpy as np
+arr = np.array([1,2,3,6,7])
+print(arr[-1] == arr[3])
+```
+
+**Options:**
+
+1. 7
+2. 6
+3. True
+4. False ✅
+
+<!--
+Explanation:
+- `arr[-1]` is the last element → `7`.
+- `arr[3]` is the element at index 3 → `6`.
+- `7 == 6` evaluates to `False`.
+-->
+
+---
+
+## 2) What is the dimension of the following array (arr):
+
+```py
+import numpy as np
+a = [1,5,3,0,-3]
+arr = np.array([a])
+```
+
+**Options:**
+
+1. 1
+2. 2 ✅
+3. 3
+4. 4
+
+<!--
+Explanation:
+- `a` is a list of length 5.
+- `np.array([a])` wraps `a` inside another list, producing `[[1,5,3,0,-3]]`.
+- This is a 2D array with shape `(1, 5)`, so `ndim == 2`.
+-->
+
+---
+
+## 3) Select the correct output of the following code
+
+```py
+import numpy as np
+arr = [1,-1,2,3,4,-5]
+arr1 = np.array([1,10,-3,[arr]])
+print(arr[3])
+```
+
+**Options:**
+
+1. -3
+2. [1,-1,2,-3,4,-5]
+3. 3 ✅
+4. None of the above
+
+<!--
+Explanation:
+- `arr` is the Python list `[1,-1,2,3,4,-5]`.
+- `arr[3]` accesses the element at index 3 (0-based), which is `3`.
+- The creation of `arr1` does not change `arr`.
+-->
+
+---
+
+## 4) Select the correct output:
+
+```py
+import numpy as np
+L = [1, 2, 5, [41, -324, 9, [-3,4,-67]]]
+L = np.array([L[-1][0]])
+print(L.ndim)
+```
+
+**Options:**
+
+1. 3
+2. 2
+3. 4
+4. None of the above ✅
+
+<!--
+Explanation:
+- `L[-1]` is `[41, -324, 9, [-3,4,-67]]`.
+- `L[-1][0]` is `41`.
+- `np.array([41])` is a 1-D array with a single element; its `.ndim` is `1`.
+- None of the given options is `1`, so choose “None of the above”.
+-->
+
+---
+
+## 5) Select the correct output:
+
+```py
+import numpy as np
+L = np.array([1,2,3,4,5])
+for i in L:
+  print(L[len(L)-i])
+  break
+```
+
+**Options:**
+
+1. 1
+2. 2
+3. 3
+4. 4
+5. None of the above ✅
+
+<!--
+Explanation:
+- `len(L)` is `5`.
+- The loop runs with first `i = 1` (since L[0] == 1) and immediately breaks after first iteration.
+- `L[len(L) - i]` → `L[5 - 1]` → `L[4]` → `5`.
+- The printed value is `5`, which is not among options 1–4, so answer is “None of the above”.
+-->
+
+---
+
+## 6) What is the correct way to see the number of different categories present in the column 'species'?
+
+```py
+import pandas as pd
+import seaborn as sns
+df = sns.load_dataset('iris')
+```
+
+**Options:**
+
+1. `data['species'].value_counts()`
+2. `df.sort_values('sepal_length', ascending=False)`
+3. `df['species'].value_counts()` ✅
+4. Both (1st and 3rd) options
+
+<!--
+Explanation:
+- The DataFrame variable is `df`, not `data` — option 1 fails.
+- `df.sort_values(...)` sorts rows, it doesn’t count categories.
+- `df['species'].value_counts()` returns counts per category; this is correct.
+-->
+
+---
+
+## 7) View first 5 observations of a dataset
+
+**Options:**
+
+1. `df.Head()`
+2. `df.head()` ✅
+3. `data.head()`
+4. `df.tail()`
+
+<!--
+Explanation:
+- Pandas method names are case-sensitive: `head()` in lowercase is correct.
+- `df.head()` returns the first 5 rows by default.
+-->
+
+---
+
+## 8) View random 5 observations
+
+**Options:**
+
+1. `df.sample()`
+2. `df.head()`
+3. `df.tail()`
+4. `df.sample(5)` ✅
+
+<!--
+Explanation:
+- `df.sample()` returns 1 random row by default.
+- `df.sample(5)` returns 5 random rows — correct.
+-->
+
+---
+
+## 9) What does `df.info()` do?
+
+**Options:**
+
+1. Gives the number of duplicate rows in the data.
+2. Gives the number of columns in the data.
+3. Gives the first 10 observations in the data.
+4. None of the above ✅
+
+<!--
+Explanation:
+- `df.info()` prints a concise summary: number of entries, column names, non-null counts, dtypes, memory usage.
+- While it *shows* number of columns as part of the summary, none of the specific options precisely describe `df.info()`, so choose 4.
+-->
+
+---
+
+## 10) Which method helps change column names?
+
+**Options:**
+
+1. `df_data.value_counts()`
+2. `df_data.rename()` ✅
+3. `df_data.info()`
+4. None of the above
+
+<!--
+Explanation:
+- `rename()` is the pandas method used to change column/index labels, e.g. `df.rename(columns={'old':'new'}, inplace=True)`.
+-->
+
+---
+
+## 11) Save dataframe `df` into `name.csv` — correct way?
+
+**Options:**
+
+1. `pd.read_csv(df,'name.csv')`
+2. `df.to_csv('name.csv')` ✅
+3. `df.head()`
+4. None of the above
+
+<!--
+Explanation:
+- `to_csv()` writes a DataFrame to CSV. `read_csv()` reads from CSV.
+-->
+
+---
+
+## 12) The value left unfilled in a dataset is known as:
+
+**Options:**
+
+1. Duplicate value
+2. Null value ✅
+3. Non-Null value
+4. Outlier
+
+<!--
+Explanation:
+- An unfilled or missing entry is called a missing/null value (often `NaN`).
+-->
+
+---
+
+## 13) Correct way to find number of duplicates in a dataset
+
+**Options:**
+
+1. `df.duplicated().sum()` ✅
+2. `df.isnull().sum()`
+3. `df.info()`
+4. None of the above
+
+<!--
+Explanation:
+- `df.duplicated()` gives a boolean Series marking duplicates; `.sum()` counts them.
+-->
+
+---
+
+## 14) What does `df[df['species']=='setosa']` do?
+
+**Options:**
+
+1. Gives duplicate observations in the class of setosa
+2. Separates only observations belonging to 'setosa' class ✅
+3. Gives null values in the dataset
+4. None of the above
+
+<!--
+Explanation:
+- This uses boolean indexing to filter rows where `species` equals `'setosa'`.
+-->
+
+---
+
+## 15) What does `keep=False` do in `df.duplicated(keep=False)`?
+
+**Options:**
+
+1. Marks first entry as duplicated
+2. Marks last entry as duplicated
+3. Marks each entry as duplicated ✅
+4. Drops each duplicated entry
+
+<!--
+Explanation:
+- `keep=False` flags all occurrences of duplicated rows as `True` (none are exempted).
+-->
+
+---
+
+## 16) If `df` had 2 duplicates before calling `df.drop_duplicates(keep=False)`, how many duplicates remain?
+
+**Options:**
+
+1. 0 ✅
+2. 1
+3. 2
+4. None of the above
+
+<!--
+Explanation:
+- `drop_duplicates(keep=False)` removes all occurrences of rows that have duplicates. If there were two identical rows, both get dropped — no duplicates remain.
+-->
+
+---
+
+## 17) What will `print(df.isnull().sum())` produce?
+
+**Options:**
+
+1. Total Number of null values
+2. Series mentioning null values in respective columns ✅
+3. True
+4. None of the above
+
+<!--
+Explanation:
+- `df.isnull()` gives a boolean DataFrame; `.sum()` aggregates column-wise to count nulls per column and returns a Series.
+-->
+
+---
+
+## 18) Which method can be used to fill null values?
+
+**Options:**
+
+1. `rename()`
+2. `fillna()` ✅
+3. `dropna()`
+4. `drop_duplicates()`
+
+<!--
+Explanation:
+- `fillna()` replaces missing values with specified values or methods.
+-->
+
+---
+
+## 19) To apply a function to a particular DataFrame column, use:
+
+**Options:**
+
+1. `rename()`
+2. `apply()` ✅
+3. `fillna()`
+4. `sort_values()`
+
+<!--
+Explanation:
+- `df['col'].apply(func)` applies `func` elementwise to the column.
+-->
+
+---
+
+## 20) What is Multivariate Analysis?
+
+**Options:**
+
+1. Analysis of one column of dataset
+2. Analysis of multiple columns of dataset ✅
+3. None of the above
+
+<!--
+Explanation:
+- Multivariate analysis studies more than one variable at a time to understand relationships.
+-->
+
+---
+
+## 21) Which libraries are used for data visualization? (select more than one)
+
+**Options:**
+
+1. Seaborn ✅
+2. Matplotlib ✅
+3. None of the above
+
+<!--
+Explanation:
+- Both Matplotlib and Seaborn are popular Python plotting libraries; Seaborn is built on Matplotlib.
+-->
+
+---
+
+## 22) Which library provides a multidimensional array object and many array routines?
+
+**Options:**
+
+1. Pandas
+2. Seaborn
+3. Numpy ✅
+4. None of the above
+
+<!--
+Explanation:
+- NumPy is the core library for numerical arrays and related routines in Python.
+-->
+
+---
+
+## 23) What does this code produce?
+
+```py
+import seaborn as sns
+df_taxis = sns.load_dataset('taxis')
+sns.countplot(df_taxis['payment'])
+```
+
+**Options:**
+
+1. Pie chart of categories present in "payment" in data
+2. scatter plot chart of categories present in "payment" in data
+3. Countplot of categories present in "payment" in data ✅
+4. None of these
+
+<!--
+Explanation:
+- `sns.countplot()` draws a bar chart with counts for each category in the provided series.
+-->
+
+---
+
+## 24) Which graph visualizes percentage proportion of classes present in a feature?
+
+**Options:**
+
+1. pie chart ✅
+2. line chart
+3. scatter plot
+4. boxplot
+
+<!--
+Explanation:
+- Pie charts display category proportions as slices of a whole — useful for percentage views.
+-->
+
+---
+
+## 25) Which graph can help in finding outliers?
+
+**Options:**
+
+1. Pie chart
+2. Bar chart
+3. Boxplot ✅
+4. None of these
+
+<!--
+Explanation:
+- Boxplots show distribution and mark points outside whiskers as outliers.
+-->
+
+---
+
+## 26) What does `pairplot` do?
+
+```py
+iris = sns.load_dataset('iris')
+sns.pairplot(iris, hue='species')
+```
+
+**Options:**
+
+1. Makes pie charts for each column
+2. Makes a matrix kind of plot to analyze relations between columns ✅
+3. None of the above
+
+<!--
+Explanation:
+- `pairplot` builds a matrix of scatterplots (and histograms/kde on diagonal) for pairwise relationships between numerical columns, optionally colored by `hue`.
+-->
+
+---
+
+## 27) Which line of code can make a title in a Matplotlib graph?
+
+```py
+import matplotlib.pyplot as plt
+```
+
+**Options:**
+
+1. `plt.show()`
+2. `plt.title('This is a title')` ✅
+3. `plt.plot()`
+4. None of the above
+
+<!--
+Explanation:
+- `plt.title(...)` sets the title. `plt.show()` only renders the plot, `plt.plot()` creates a line plot.
+-->
+
+---
